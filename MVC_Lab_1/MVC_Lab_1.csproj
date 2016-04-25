@@ -168,8 +168,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaserController.cs" />
+    <Compile Include="Controllers\LifeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SellController.cs" />
+    <Compile Include="Controllers\SupermanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +239,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Superman\DoGood.cshtml" />
+    <Content Include="Views\Company\EcUtbildning.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\Ericsson.cshtml" />
+    <Content Include="Views\Company\Volvo.cshtml" />
+    <Content Include="Views\Sell\B2B.cshtml" />
+    <Content Include="Views\Sell\B2C.cshtml" />
+    <Content Include="Views\Sell\C2C.cshtml" />
+    <Content Include="Views\Sell\Completion.cshtml" />
+    <Content Include="Views\Life\SuperMario.cshtml" />
+    <Content Include="Views\Life\Health.cshtml" />
+    <Content Include="Views\Life\Live.cshtml" />
+    <Content Include="Views\Laser\Sabel.cshtml" />
+    <Content Include="Views\Laser\Eye.cshtml" />
+    <Content Include="Views\Laser\Pointer.cshtml" />
+    <Content Include="Views\Laser\Printer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
