@@ -1,0 +1,56 @@
+﻿@model Lab_2_2.Models.GameTModel
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/GameT.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<h2>TicTacToe</h2>
+@{
+    string style = null;
+    @:Turns
+
+    if (Model.Player == 'O')
+    {
+        <p>Player One Turn </p>
+    }
+    else if (Model.Player == 'X')
+    {
+        <p>Player Two Turn </p>
+    }
+
+}
+<div class="row">
+    <div id="gameBoard" class="col-xs-12 col-sm-6 col-lg-8">
+        @using (Html.BeginForm("Index", "Game"))
+        {
+
+            for (int i = 1; i < 10; i++)
+            {
+                if (@Model.Board[i] == 'X')
+                {
+                    style = "color: green";
+                }
+                else if (@Model.Board[i] == 'O')
+                {
+                    style = "color: red";
+                }
+                <button id="button1" type="submit" value="@i" name="userInput" style="@style">@(Model.Board[i])</button>
+                if (i % 3 == 0)
+                {
+                    <br />
+                }
+
+            }
+        }
+    </div>
+
+    <div id="GameResult" class="col-xs-6 col-lg-4">
+        <h3 id="ResultH3">@Model.Result</h3>
+        @*@{
+            if (@Model.Win == true)
+            {
+                <button type="reset" value="reset"> reset</button>
+            }
+        }*@
+    </div>
+</div>

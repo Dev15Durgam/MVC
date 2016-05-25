@@ -1,0 +1,65 @@
+﻿@model Lab_4_2.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentLastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentLastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentPN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentPN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+<div id="GradeContainer">
+    @Html.Action(
+    actionName: "_GradeForStudent",
+    controllerName: "Grade",
+    routeValues: new { id = Model.StudentID }
+    )
+</div>
+<div id="SpandexGradeContainer">
+    @Html.Action(
+    actionName: "_Create",
+    controllerName: "Grade",
+    routeValues: new { id = Model.StudentID }
+    )
+</div>

@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Lab_4_2.Models.Grade>
+
+<p>
+    @Html.ActionLink("Create New","_Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentGrade)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentGrade)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.GradeID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.GradeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GradeID })
+            </td>*@
+        </tr>
+    }
+
+</table>
