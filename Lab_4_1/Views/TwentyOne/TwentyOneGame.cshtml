@@ -1,0 +1,39 @@
+﻿@model Lab_4_1.Models._21GameModel
+@{
+    ViewBag.Title = "TwentyOneGame";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>TwentyOneGame</h2>
+
+@using (Ajax.BeginForm(
+    actionName: "TwentyOneGame",
+    controllerName: "TwentyOne",
+    ajaxOptions: new AjaxOptions { UpdateTargetId= "ResultView" }
+
+))
+{
+
+    @Html.Hidden("CurrentNumber");
+    <p>Player Input: @Html.DisplayTextFor(p => p.UserInput)</p>
+        <br />
+        @Html.DisplayText("CurrentNumber");
+
+    <label for="number1">1</label>
+
+        @Html.RadioButtonFor(x => x.UserInput, 1, new { id = "number1" })
+
+
+
+        <label for="number2">Or 2</label>
+
+        @Html.RadioButtonFor(x => x.UserInput, 2, new { id = "number2" })
+
+
+        <br />
+        <input type="submit" value="OK" />
+        <br />
+
+}
+@*<p>@ViewBag.result</p>*@
+
+<div id="ResultView"></div>
