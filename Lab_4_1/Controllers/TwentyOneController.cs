@@ -9,15 +9,19 @@ namespace Lab_4_1.Controllers
 {
     public class TwentyOneController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
         // GET: TwentyOne
         [HttpGet]
-        public ActionResult TwentyOneGame()
+        public PartialViewResult TwentyOneGame()
         {
             var game = new _21GameModel();
-            return View(game);
+            return PartialView(game);
         }
         [HttpPost]
-        public ActionResult TwentyOneGame(_21GameModel game)
+        public PartialViewResult TwentyOneGame(_21GameModel game)
         {
             game.UserInputLogic();
 
@@ -35,7 +39,7 @@ namespace Lab_4_1.Controllers
             }
 
             ModelState.Remove("CurrentNumber");
-            return View(game);
+            return PartialView(game);
 
         }
     }

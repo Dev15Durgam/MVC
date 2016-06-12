@@ -1,17 +1,13 @@
 ﻿@model Lab_4_1.Models._21GameModel
-@{
-    ViewBag.Title = "TwentyOneGame";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<h2>TwentyOneGame</h2>
 
-@using (Ajax.BeginForm(
-    actionName: "TwentyOneGame",
-    controllerName: "TwentyOne",
-    ajaxOptions: new AjaxOptions { UpdateTargetId= "ResultView" }
 
-))
+
+<h3> @ViewBag.result</h3>
+
+@using (Ajax.BeginForm("TwentyOneGame", "TwentyOne", new AjaxOptions { UpdateTargetId = "gameId" }))
 {
+
+
 
     @Html.Hidden("CurrentNumber");
     <p>Player Input: @Html.DisplayTextFor(p => p.UserInput)</p>
@@ -33,7 +29,5 @@
         <input type="submit" value="OK" />
         <br />
 
-}
-@*<p>@ViewBag.result</p>*@
 
-<div id="ResultView"></div>
+}
